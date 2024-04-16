@@ -1,0 +1,11 @@
+# Use official MongoDB image as the base image
+FROM mongo:latest
+
+# Create directory to store MongoDB data
+VOLUME [ "/data/db" ]
+
+# Expose MongoDB port
+EXPOSE 27017
+
+# Set command to run MongoDB
+CMD ["mongod"]

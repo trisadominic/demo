@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - "3302:3302"
+    depends_on:
+      - db
+    environment:
+      MONGO_URL: "mongodb://db:27017/mydatabase"
+  
+  db:
+    build:
+      context: .
+      dockerfile: Dockerfile.mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:

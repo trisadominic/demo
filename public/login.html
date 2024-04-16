@@ -1,0 +1,78 @@
+<html>
+<head>
+    <title>Login Form</title>
+    <link rel="stylesheet" href="login.css"/>
+</head>
+<body>
+
+    <section class="header">
+        <nav>
+            <a href="index.html"><img src="./images/logo.png" alt="" /></a>
+        </nav>
+    
+
+     <div class="hero">
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+            </div>
+
+            <div class="social-icons">
+                <img src="./images/fb.png">
+                <img src="./images/tw.png">
+                <img src="./images/gp.png">
+            </div>
+
+            <form id="login" class="input-group" action="/login" method="POST">
+                <input type="text" name="userId" id="userId" class="input-field" placeholder="User Id" required>
+                <input type="password" name="password" id="password" class="input-field" placeholder="Enter Password" required>
+                <span id="message" class="message"></span>
+                <button type="submit" class="submit-btn">Log in</button>
+                <p>Create a new account? <a href="/register">Register</a></p>
+            </form>
+        </div>
+     </div>
+     <script>
+        var x=document.getElementById("login")
+         var y=document.getElementById("register")
+        var z=document.getElementById("btn")
+      </script>
+     <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const form = document.getElementById("login");
+            const message = document.getElementById("message");
+
+            form.addEventListener("submit", async (event) => {
+                event.preventDefault();
+
+                const userId = document.getElementById("userId").value;
+                const password = document.getElementById("password").value;
+
+                try {
+                    const response = await fetch('/login', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ userId, password }),
+                    });
+
+                    const data = await response.text();
+
+                    if (response.ok) {
+                        window.location.href = '/';
+                    } else {
+                        message.textContent = data;  // Display error message
+                    }
+
+                } catch (error) {
+                    console.error('Error:', error);
+                    message.textContent = 'Error logging in';
+                }
+            });
+        });
+     </script>
+   </section>
+</body>
+</html>
