@@ -11,6 +11,7 @@
     background-position: center;
     background-size: cover;
     position: relative;
+    block-size: 90px;
   }
 nav img {
     width: 150px;

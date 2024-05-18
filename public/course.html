@@ -1,61 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>University Website</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <body>
-    <section class="sub-header">
-      <nav>
-        <a href="index.html"><img src="./images/logo.png" alt="" /></a>
-        <div class="nav-links" id="navLinks">
-          <i class="fa-solid fa fa-xmark" onclick="hideMenu()"></i>
-          <ul>
-            <li><a href="./index.html">HOME</a></li>
-            <li><a href="./about.html">ABOUT</a></li>
-            <li><a href="./course.html">COURSE</a></li>
-            <li><a href="./contact.html">CONTACT</a></li>
-          </ul>
-        </div>
-        <i class="fa-solid fa fa-bars" onclick="showMenu()"></i>
-      </nav>
-      <h1>Our Courses</h1>
-    </section>
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>University Website</title>
+      <link rel="stylesheet" href="style.css" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"/>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />   
+        <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"/>
+   </head>  
+    <body>
 
-   <!--course-->
+     <header>
+        <a href="#" class="logo">
+          <img src="images/logo.png">
+        </a>
 
-   <section class="course">
-    <h1>Courses We Offer</h1>
-    <div class="row">
-      <div class="course-col">
-        <h3>Python</h3>
-        <div class="box">
-          <img src="./images/python.png">
+        <ul class="navbar">
+          <li><a href="./index.html">HOME</a></li>
+          <li><a href="./about.html">ABOUT</a></li>
+          <li><a href="./contact.html">CONTACT</a></li>
+          <li><a href="./login.html">LOG IN</a></li>
+        </ul>
+
+        <div class="header-icons">
+          <a href="#"><i class='bx bx-user' ></i></a>
+          <a href="#"><i class='bx bx-heart' ></i></a>
+          <a href="./cart.html"><i class='bx bx-cart'></i></a>
+          <div class="bx bx-menu" id="menu-icon"></div>
         </div>
-      </div>
-      <div class="course-col">
-        <h3>Java</h3>
-        <img src="./images/java.png">
-      </div>
-      <div class="course-col">
-        <h3>php</h3>
-        <img src="./images/php.png">
+     </header>
+
+    
+    <!--Courses-->
+    <div class="popular-courses">
+      <h3 style="color: orange; margin-bottom: 20px; text-align: center">
+        COURSES
+      </h3>
+      <h1 style="font-size: 35px; margin-bottom: 30px; text-align: center">
+        Explore Popular Courses
+      </h1>
+      <div class="popular-courses-container">
+        <div class="popular-courses-items">
+          <img src="images/java1.jpg" alt="" />
+          <div class="text">
+            <h3 style="color: orange">₹600.00</h3>
+            <button class="addCart">+</button>
+            <h2>
+              Java <br />
+              For Beginners
+            </h2>
+            <p style="color: gray">05 hours 15 minutes</p>
+            <div class="starts-container">
+              <div class="starts">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+              </div>
+              <p style="color: gray">{5 Reviews}</p>
+            </div>
+          </div>
+        </div>
+        <div class="popular-courses-items">
+          <img src="images/c-programming.jpg" alt="" />
+          <div class="text">
+            <h3 style="color: orange">₹1000.00</h3>
+            <button class="addCart">+</button>
+            <h2>
+              C Programming <br />
+              For Beginners
+            </h2>
+            <p style="color: gray">10 hours 15 minutes</p>
+            <div class="starts-container">
+              <div class="starts">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+              </div>
+              <p style="color: gray">{4 Reviews}</p>
+            </div>
+          </div>
+        </div>
+        <div class="popular-courses-items">
+          <img src="images/python.png" alt="" />
+          <div class="text">
+            <h3 style="color: orange">₹500.00</h3>
+            <button class="addCart">+</button>
+            <h2>
+              Python <br />
+              For Intermediates
+            </h2>
+            <p style="color: gray">30 hours 15 minutes</p>
+            <div class="starts-container">
+              <div class="starts">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+              </div>
+              <p style="color: gray">{5 Reviews}</p>
+            </div>
+          </div>
+        </div>
+        <div class="popular-courses-items">
+          <img src="images/SQL.jpg" alt="" />
+          <div class="text">
+            <h3 style="color: orange">₹2000.00</h3>
+            <button class="addCart">+</button>
+            <h2>
+              SQL<br />
+              For Beginners
+            </h2>
+            <p style="color: gray">50 hours 20 minutes</p>
+            <div class="starts-container">
+              <div class="starts">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+              </div>
+              <p style="color: gray">{5 Reviews}</p>
+            </div>
+          </div>
+        </div>
+        <div class="popular-courses-items">
+          <img src="images/HTML.jpg" alt="" />
+          <div class="text">
+            <h3 style="color: orange">₹720.00</h3>
+            <button class="addCart">+</button>
+            <h2>
+              HTML<br />
+              For Beginners
+            </h2>
+            <p style="color: gray">07 hours 10 minutes</p>
+            <div class="starts-container">
+              <div class="starts">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+              </div>
+              <p style="color: gray">{3 Reviews}</p>
+            </div>
+          </div>
+        </div>
+        <div class="popular-courses-items">
+          <img src="images/R.jpg" alt="" />
+          <div class="text">
+            <h3 style="color: orange">₹1200.00</h3>
+            <button class="addCart">+</button>
+            <h2>
+              R Programming<br />
+              For Beginners
+            </h2>
+            <p style="color: gray">11 hours 10 minutes</p>
+            <div class="starts-container">
+              <div class="starts">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+              </div>
+              <p style="color: gray">{4 Reviews}</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
-
   <!----- facitlities------->
 
   <section class="facilities">
-    <h1>Expert Teachers</h1>
+    <h1><br>Expert Teachers</h1>
     <div class="row">
       <div class="facilities-col">
         <img src="./images/teacher1.png" alt="">
@@ -86,6 +210,7 @@
       <p>Made Width <i class="fa-solid fa-heart"></i> by Trisa Dominic</p>
     </section>
 
+   
     <script src="script.js"></script>
   </body>
 </html>

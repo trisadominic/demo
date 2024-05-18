@@ -115,7 +115,8 @@ span {
 }
 .message {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 237px;
     color: green;
     font-weight: bold;
+    font-size: small;
 }

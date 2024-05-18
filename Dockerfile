@@ -1,24 +1,20 @@
-# Use an official Node runtime as a parent image
-FROM node:20.12.2 AS build
+# Use the official Node.js 16 image as a base
+FROM node:16
 
-# Set working directory
+# Set the working directory in the container
 WORKDIR /usr/src/app
+
+# Copy package.json and package-lock.json to the container
+COPY package*.json ./
 
 # Install dependencies
-COPY package*.json ./
 RUN npm install
-
-# Build bcrypt
-RUN npm rebuild bcrypt
-
-# Second stage: Use a smaller Node image for production
-FROM node:20.12.2-slim
-
-WORKDIR /usr/src/app
-
-# Copy compiled node modules and source code
-COPY --from=build /usr/src/app/node_modules ./node_modules
+                   
+# Copy the rest of the application code to the container
 COPY . .
 
-# Start your app
-CMD [ "npm", "start" ]
+# Expose the port the app runs on
+EXPOSE 3002
+
+# Command to run the application
+CMD ["node", "server.js"]
